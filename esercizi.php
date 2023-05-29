@@ -65,6 +65,156 @@
 //     }
 //  };
 
+// Verifica se la password  inserita è valida secondo questi criteri 
+// 1) deve essere lunga almeno 8 caratteri 
+// 2) deve contenere almeno 1 numero 
+// 3) deve contenere una lettera in UPPERCASE
+// 4) deve contenere un carattere speciale 
+
+// $password = readline("Inserisci la Password ");
+// echo "La tua password è : $password  \n";
+// $firstCondition = False;
+// $secondCondition = False;
+// $thirdCondition = False;
+// $fouthCondition = False;
+
+// if (strlen($password) >= 8) {
+//     $firstCondition = true;
+    
+// };
+
+// echo "La prima regola è $firstCondition  \n";
+
+// for ($i=0; $i < strlen($password) ; $i++) { 
+//     if (is_numeric($password[$i])) {
+//         $secondCondition = true;
+//         break;
+//     }
+// };
+
+// echo "La seconda regola è $secondCondition  \n";
+
+// for ($j=0; $j < strlen($password) ; $j++) { 
+//     if (ctype_upper($password[$j])) {
+//         $thirdCondition = true;
+//         break;
+//     }
+// };
+
+// echo "La terza regola è $thirdCondition  \n";
+
+// $specicialChar = ['!', 'ç', '£'];
+
+// for ($i=0; $i < strlen($password); $i++) { 
+//     for ($j=0; $j < count($specicialChar); $j++) { 
+//         if ($password[$i] == $specicialChar [$j]) {
+//             $fouthCondition = true;
+//             break;
+//         }
+//     }
+// }
+
+// echo "La terza regola è $fouthCondition  \n";
+
+// if ($firstCondition == true && $secondCondition == true && $thirdCondition == true && $fouthCondition == true ) {
+//     echo "La tua password è accettata";
+// }else {
+//     echo "la tua password è rifiutata,riprova ";
+// };
+
+
+// TRASFORMO TUTTO IN UNA FUNZIONE
+
+// $password = readline("Inserisci la Password ");
+
+// function CheckLen ($pw){
+//     if (strlen($pw) >= 8 ) {
+//         return true;
+//     }
+//     return false;
+// }
+
+//  $firstCondition = CheckLen($password);
+//  echo "La prima condizione è $firstCondition \n";
+
+//  function checkNum ($pw){
+//      for ($i=0; $i < strlen($pw); $i++) { 
+//          if (is_numeric($pw[$i])) {
+//              return true;
+//          }
+//          return false;
+//      }
+//      return false;
+//  }
+//  $secondCondition = checkNum ($password);
+//  echo "La seconda condizione è $secondCondition \n";
+
+//  function checkUpper ($pw){
+//     for ($i=0; $i < strlen($pw) ; $i++) { 
+//         if (ctype_upper($pw[$i])) {
+//             return true;
+//         }
+        
+//     }
+//     return false;
+// };
+// $thirdCondition = checkUpper ($password);
+// echo "la terza condizione è $thirdCondition \n";
+
+// function checkSpecialChar($pw){
+// $specialChar = ["!","&","£"];
+// for ($i=0; $i < strlen($pw[$i]) ; $i++) { 
+//     for ($j=0; $j < count($specialChar) ; $j++) { 
+//         if ($pw [$i] == $specialChar[$j]) {
+//             return true;
+//         }
+//     }
+// }
+// return false;
+
+// }
+
+// $fouthCondition = checkSpecialChar ($password);
+// echo "la quarta condizione è $fouthCondition";
+
+
+
+
+// Riprodurre una concessionaria di automobili in OOP seguendo questa gerarchia di classi, con caratteristiche a scelta (Marchio, Modello, Numero porte, Prezzo….e altri a vostra scelta)
+// Automobile
+// SUV
+// Utilitaria
+// Sportiva
+// Tenere il conto degli oggetti creati per ogni classe
+
+class Automobile {
+    public $marchio;
+    public $modello;
+    public $numeroPorte;
+    public $prezzo;
+    public static $acquisti = 0;
+
+    public function __construct($mar,$mod,$numPort,$prez){
+        $this->marchio = $mar;
+        $this->modello = $mod;
+        $this->numeroPorte = $numPort;
+        $this->prezzo = $prez;
+        self::$acquisti ++;
+    }
+
+    public static function autoacquistate (){
+        echo 'Sono state acquistate' . self::$acquisti . ' ' . 'Automobili' . "\n";
+    }
+}
+
+
+$auto1 = new Automobile ('Bmw','120D','3','15.000$');
+var_dump ($auto1);
+Automobile::autoacquistate();
+
+
+
+
 
 
 
